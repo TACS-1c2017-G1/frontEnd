@@ -54,23 +54,24 @@ Brackets (Permite hacer un Live preview dentro del editor)
 
 ## Estructura de Archivos:
 
-`package.json` Archivo de proyecto para npm.
-`gulpfile.js` Se definen las tareas a correr con gulp.
-
-`docs/` Podria llamarse bin, release u otros tantos nombres mejores, pero llamandolo docs, github lo puede poner como una pagina web con dominio propio.
-`../index.html` Donde importamos nuestras vendor resources, bundle.js y style.css.
-`../style.css` Se autogenera con Gulp Watch.
-`../bundle.js` Se autogenera con Gulp Watch.
-`/templates`
-`../header.html`
-`../footer.html`
-`../home.html`
-`../listas`
-`../../list.html`, `new.html`, `edit.html`
-`.../favoritos`
-`../../list.html`, `new.html`, `edit.html`
-
 ```
+package.json - Archivo de proyecto para npm.
+gulpfile.js - Se definen las tareas a correr con gulp.
+
+docs/ - Podria llamarse bin, release u otros tantos nombres mejores, pero llamandolo docs, github lo puede poner como una pagina web con dominio propio.
+../index.html - Donde importamos nuestras vendor resources, bundle.js y style.css.
+../style.css - Se autogenera con Gulp Watch.
+../bundle.js - Se autogenera con Gulp Watch.
+/templates
+../header.html
+../footer.html
+../home.html
+../listas
+../../list.html, new.html, edit.html
+.../favoritos
+../../list.html, new.html, edit.html
+
+
 dev/
 ../index.html
 ../style.css
