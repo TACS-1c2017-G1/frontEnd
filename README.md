@@ -3,7 +3,7 @@
 ## Pasos
 
 Comentario para 1 y 2: Nodejs te instala npm tambien. Asi que no es necesario instalar npm. Si van por la opcion 1 de Nodejs, la version de npm queda "clavada", si van por la full instalacion de nodejs, pueden actualizar npm hasta su ultima version.
-1. Instalar nodeJS, para saber que version tienen instalada `node -v`
+### 1. Instalar nodeJS, para saber que version tienen instalada `node -v`
 ```
 sudo apt-get update && sudo apt-get install -y nodejs-legacy
 ```
@@ -13,44 +13,52 @@ curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
-2. (opcional) Actualizar npm, para saber que version tienen instalada `npm -v`
+### 2. (opcional) Actualizar npm, para saber que version tienen instalada `npm -v`
 ```
 sudo npm install npm@latest -g
 ```
 
-3. Instalar dependencias. Desde el directorio ppal del proyecto:
+### 3. Instalar dependencias. Desde el directorio ppal del proyecto:
 ```
 sudo npm install
 ```
 
-4. Instalar Gulp y correr gulp watch
+### 4. Instalar Gulp y correr gulp watch
 ```
 sudo npm install gulp --dev-save
 gulp devSync
 ```
 
-5. Ver el front end, alternativas:
+### 5. Ver el front end, alternativas:
 
-  a. Con `gulp devSync` ya deberian poder abrir el browser en el puerto `localhost:3000` para poder verlo.
-  b. Abrir el archivo `index.html` en un browser (preferentemente Chrome que hace un liveReload por cada vez que se modifica el archivo).
-  c. Via `http-server`
-    i. Instalarlo via `npm`
+- Con `gulp devSync` ya deberian poder abrir el browser en el puerto `localhost:3000` para poder verlo.
+  
+- Abrir el archivo `index.html` en un browser (preferentemente Chrome que hace un liveReload por cada vez que se modifica el archivo).
+  
+- Via `http-server`
+  
+  - Instalarlo via `npm`
+    
       ```
       sudo npm install http-server -g
       ```
-    ii. Correrlo. Desde el directorio del proyecto:
+      
+  - Correrlo. Desde el directorio del proyecto:
+    
       ```
        http-server ./docs -p 1234 --cors -o
       ```
-    iii. Abrir un browser con la url http://localhost:1234
-  d. Utilizar algun IDE o editor de texto con preview
+      
+  - Abrir un browser con la url http://localhost:1234
+    
+- Utilizar algun IDE o editor de texto con preview
 
 
 ## Editores de texto piolas:
-Sublime text
-Atom
-Brackets (Permite hacer un Live preview dentro del editor)
-(Aptana, Netbeans, Eclipse JEE u otro IDE)
+- Sublime text
+- Atom
+- Brackets (Permite hacer un Live preview dentro del editor)
+- (Aptana, Netbeans, Eclipse JEE u otro IDE)
 
 ## Estructura de Archivos:
 
