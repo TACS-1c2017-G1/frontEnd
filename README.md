@@ -15,7 +15,7 @@ sudo apt-get install -y nodejs
 
 2. (opcional) Actualizar npm, para saber que version tienen instalada `npm -v`
 ```
-npm install npm@latest -g
+sudo npm install npm@latest -g
 ```
 
 3. Instalar dependencias. Desde el directorio ppal del proyecto:
@@ -23,25 +23,27 @@ npm install npm@latest -g
 sudo npm install
 ```
 
-4. Correr gulp watch (por cada save de cualquier archivo js, actualiza el archivo bundle.js y por cada save de cualquier archivo .less, actualiza el archivo style.css)
+4. Instalar Gulp y correr gulp watch
 ```
-gulp watch
+sudo npm install gulp --dev-save
+gulp devSync
 ```
 
 5. Ver el front end, alternativas:
 
-  a. Abrir el archivo index.html en un browser (preferentemente Chrome que hace un liveReload por cada vez que se modifica el archivo).
-  b. Via `http-server`
+  a. Con `gulp devSync` ya deberian poder abrir el browser en el puerto `localhost:3000` para poder verlo.
+  b. Abrir el archivo `index.html` en un browser (preferentemente Chrome que hace un liveReload por cada vez que se modifica el archivo).
+  c. Via `http-server`
     i. Instalarlo via `npm`
       ```
-      npm install http-server -g
+      sudo npm install http-server -g
       ```
     ii. Correrlo. Desde el directorio del proyecto:
       ```
        http-server ./docs -p 1234 --cors -o
       ```
     iii. Abrir un browser con la url http://localhost:1234
-  c. Utilizar algun IDE o editor de texto con preview
+  d. Utilizar algun IDE o editor de texto con preview
 
 
 ## Editores de texto piolas:
