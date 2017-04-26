@@ -1,28 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
+
 <head>
-	<!-- <base href="/"> -->
-	<title>TACS-1c2017-G1 front-end</title>
-	<meta charset="UTF-8"/>
-	<link rel="stylesheet" type='text/css' href="style.css" />
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js" integrity="sha256-e5SbGNdhJYKT++Es27SB9lEsr+fJMcJQtQ0YsOenJr4=" crossorigin="anonymous"></script>
-	<script src="bundle.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.js" integrity="sha256-7OT8H6uxStHOJMZE2TeZfI960JyEgNPn9+DEAvamJPg=" crossorigin="anonymous"></script>
+  <!-- <base href="/"> -->
+  <title>TACS-1c2017-G1 front-end</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type='text/css' href="style.css" />
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js" integrity="sha256-e5SbGNdhJYKT++Es27SB9lEsr+fJMcJQtQ0YsOenJr4=" crossorigin="anonymous"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.js" integrity="sha256-7OT8H6uxStHOJMZE2TeZfI960JyEgNPn9+DEAvamJPg=" crossorigin="anonymous"></script>
+  <script src="bundle.js"></script>
 </head>
-<body ng-app="myApp">
-	<header>
-	    <!-- <div ui-view="header"></div> -->
-		<a ui-sref="home" ui-sref-active="active">home</a>
-		<a ui-sref="other" ui-sref-active="active">other</a>
-		<a ui-sref="listas" ui-sref-active="active">listas</a>
-		<hr/>
-	</header>
-	<div ui-view="container">
-	</div>
-	<footer id="mainFooter" ui-view="footer">
-		<hr/>
-		<p>Here goes a Footer</p>
-	</footer>
+
+<body>
+  <header ng-controller="navbar">
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" ng-click="isNavCollapsed = !isNavCollapsed">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+        <a class="navbar-brand" ui-sref="home">AMDb</a>
+      </div>
+      <div class="collapse navbar-collapse" uib-collapse="isNavCollapsed">
+        <ul class="nav navbar-nav">
+          <li><a ui-sref="home" ui-sref-active="active">home</a></li>
+          <li><a ui-sref="other" ui-sref-active="active">other</a></li>
+          <li><a ui-sref="listas" ui-sref-active="active">listas</a></li>
+          <li>
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="{{search.query}}">
+              <div class="input-group-btn">
+                <button ng-model="search.by" id="simple-btn-keyboard-nav" type="button" class="btn btn-primary">{{search.by}}</button>
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="caret"></span>
+                  <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                  <li ng-repeat="option in search.options">
+                    <a href="" ng-click="search.by=option.title">{{option.title}}</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- <div ui-view="header"></div> -->
+  </header>
+  <div ui-view="container">
+  </div>
+  <footer id="mainFooter" ui-view="footer">
+    <hr/>
+    <p>Here goes a Footer</p>
+  </footer>
 </body>
+
 </html>

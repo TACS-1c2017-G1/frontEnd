@@ -1,8 +1,6 @@
-var myApp = angular.module('myApp', ['ui.router']);
-myApp.config(function($stateProvider){
-// An array of state definitions
-  var states = [
-    {
+myApp.config(function($stateProvider) {
+  // An array of state definitions
+  var states = [{
       name: 'layouts',
       url: '',
       abstract: true,
@@ -10,7 +8,7 @@ myApp.config(function($stateProvider){
         'header': {
           templateUrl: 'templates/header.html'
         },
-        'footer':{
+        'footer': {
           templateUrl: 'templates/footer.html'
         }
       }
