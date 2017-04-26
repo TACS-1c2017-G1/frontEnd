@@ -29,6 +29,15 @@ gulp.task('devSync', function() {
     gulp.watch("dev/*.html").on('change', browserSync.reload);
 });
 
+// Static server
+gulp.task('docsSync', function() {
+    browserSync.init({
+        server: {
+            baseDir: "./docs"
+        }
+    });
+});
+
 gulp.task('concat', function() {
 	gulp.src('dev/src/**/*.js')
 		.pipe(sourcemaps.init())
@@ -41,7 +50,7 @@ gulp.task('concat', function() {
 gulp.task('uglify', function() {
     gulp.src('dev/src/**/*.js')
 		.pipe(concat('bundle.js'))
-    	.pipe(uglify())
+    //FIXME	.pipe(uglify())
 		.pipe(rename('bundle.js'))
     	.pipe(gulp.dest('docs'));
 });
@@ -50,7 +59,7 @@ gulp.task('minify', function() {
   gulp.src('dev/*.html')
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('docs'));
-  return gulp.src('templates/**/*.html')
+  return gulp.src('dev/templates/**/*.html')
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('docs/templates'));
 });
