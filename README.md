@@ -4,6 +4,11 @@
 
 Comentario para 1 y 2: Nodejs te instala npm tambien. Asi que no es necesario instalar npm. Si van por la opcion 1 de Nodejs, la version de npm queda "clavada", si van por la full instalacion de nodejs, pueden actualizar npm hasta su ultima version.
 ### 1. Instalar nodeJS, para saber que version tienen instalada `node -v`
+#Windows
+```
+Desde https://nodejs.org/es/ se descargan la LTS y a traves de un wizard re sencillo se los instala.
+```
+#Linux
 ```
 sudo apt-get update && sudo apt-get install -y nodejs-legacy
 ```
