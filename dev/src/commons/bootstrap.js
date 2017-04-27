@@ -3,8 +3,9 @@ myApp.controller('navbar', function($scope) {
   $scope.isCollapsed = false;
   $scope.isCollapsedHorizontal = false;
   $scope.search={
-    query: "Search...",
+    query: "",
     options: ["Movies","People","Anything"],
     by: "Movies"
   }
+
 });

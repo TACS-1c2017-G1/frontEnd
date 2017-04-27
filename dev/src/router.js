@@ -42,6 +42,17 @@ myApp.config(function($stateProvider) {
           templateUrl: 'templates/listas/list.html'
         }
       }
+    },
+
+    {
+      name: 'buscarMovies',
+      url: '/buscar/pelicula/',
+      controller: 'buscarMoviesController',
+      views: {
+        'container@': {
+          templateUrl: 'templates/buscar/movies.html'
+        }
+      }
     }
 
   ]
